@@ -13,6 +13,9 @@ defined('ABSPATH') || exit;
  */
 
 
+// include plugin-options.php
+require_once plugin_dir_path(__FILE__) . 'fmw-plugin-options.php';
+
 // First, check if the function 'carbon_fields_boot_plugin' exists
 // if (!function_exists('carbon_fields_boot_plugin')) {
 //     // If the function does not exist, display an error message and deactivate the plugin
