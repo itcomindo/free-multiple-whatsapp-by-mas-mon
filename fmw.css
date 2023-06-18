@@ -1,0 +1,199 @@
+div#fmwapr.active {
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 4px;
+  right: 8px;
+  width: 300px;
+  background-color: aliceblue;
+  border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  -ms-border-radius: 10px 10px 0 0;
+  -o-border-radius: 10px 10px 0 0;
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  -moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  -ms-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  -o-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+}
+
+div#fmwapr.inactive {
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 4px;
+  right: 8px;
+  width: 300px;
+  background-color: aliceblue;
+  border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  -ms-border-radius: 10px 10px 0 0;
+  -o-border-radius: 10px 10px 0 0;
+  transform: translateY(calc(100% - 58px));
+  -webkit-transform: translateY(calc(100% - 58px));
+  -moz-transform: translateY(calc(100% - 58px));
+  -ms-transform: translateY(calc(100% - 58px));
+  -o-transform: translateY(calc(100% - 58px));
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  -moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  -ms-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  -o-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+}
+
+div#fmwapr div {
+  box-sizing: border-box;
+}
+.fmwatoggle {
+  position: absolute;
+  right: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div#fmwaopen.inactive {
+  display: none;
+}
+div#fmwaopen.active {
+  top: -2rem;
+  font-size: 14px;
+  background-color: #333;
+  color: white;
+  padding: 3px 12px;
+  border-radius: 5px;
+}
+
+div#fmwaclose.inactive {
+  display: none;
+}
+div#fmwaclose.active {
+  width: 40px;
+  height: 40px;
+  background-color: darkred;
+  color: white;
+  top: -48px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+#fmwawr {
+  width: 100%;
+}
+
+#fmwatop,
+#fmwabot {
+  width: 100%;
+}
+
+#fmwatop {
+  height: 58px;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  -ms-border-radius: 10px 10px 0 0;
+  -o-border-radius: 10px 10px 0 0;
+  padding: 8px 1rem;
+  background-color: darkgreen;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#fmwabot {
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.fmwabotinner {
+  display: grid;
+  gap: 16px;
+}
+
+.fmwaitem {
+  width: 100%;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: 60px 1fr;
+  align-items: center;
+  padding: 8px 4px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.fmwaitem.disabled {
+  display: none;
+}
+.fmwaitemleft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  overflow: hidden;
+}
+.fmwaitemright {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+}
+.fmwastaff {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+.fmwastaffname {
+  font-size: 14px;
+  font-weight: 700;
+}
+span.fmwastaffjob {
+  font-size: 11px;
+}
+
+.fmwabtn {
+  width: 100%;
+}
+.fmwabtns {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+.fmcallbg,
+.fmwabg {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  line-height: 1;
+  justify-content: center;
+  padding: 8px 0;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.fmcallbg {
+  background-color: darkred;
+  color: wheat;
+}
+.fmwabg {
+  background-color: darkgreen;
+  color: wheat;
+}

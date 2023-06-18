@@ -13,8 +13,25 @@ defined('ABSPATH') || exit;
  */
 
 
+
 // include plugin-options.php
 require_once plugin_dir_path(__FILE__) . 'fmw-plugin-options.php';
+require_once plugin_dir_path(__FILE__) . 'fmw-show-whatsapp.php';
+
+function load_scripts()
+{
+    wp_enqueue_style('fmw-style', plugin_dir_url(__FILE__) . 'fmw.css');
+    wp_enqueue_script('fmw-script', plugin_dir_url(__FILE__) . 'fmw.js', array('jquery'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'load_scripts');
+
+
+
+
+
+
+
+
 
 // First, check if the function 'carbon_fields_boot_plugin' exists
 // if (!function_exists('carbon_fields_boot_plugin')) {

@@ -1,0 +1,96 @@
+<?php
+defined('ABSPATH') || exit;
+
+function fmw_show_whatsapp()
+{
+
+?>
+    <div id="fmwapr" class="active">
+        <div id="fmwaclose" class="active fmwatoggle">X</div>
+        <div id="fmwaopen" class="inactive fmwatoggle">Chat/Call</div>
+        <div id="fmwawr">
+            <div id="fmwatop">
+                <div id="fmwalogo">Logo</div>
+                <div id="fmwatitle">Hubungi Kami</div>
+            </div>
+            <div id="fmwabot">
+                <div class="fmwabotinner">
+                    <?php
+                    $thewhatsapp = carbon_get_theme_option('mm_multiple_whatsapp');
+                    foreach ($thewhatsapp as $wa) {
+                        // get status staff work or not
+                        $mm_disabled_wa = $wa['mm_disabled_wa'];
+                        if ($mm_disabled_wa == true) {
+                            $staffstatus = 'disabled';
+                        } else {
+                            $staffstatus = '';
+                        }
+                        // get staff name
+                        $staffname = $wa['mm_wa_staff_name'];
+                        // get staff job
+                        $staffjob = $wa['mm_wa_staff_job'];
+                        // get staff photo
+                        $mm_wa_photo = $wa['mm_wa_photo'];
+                        if (empty($mm_wa_photo)) {
+                            $file_url = plugin_dir_url(__FILE__) . 'staff.webp';
+                            $staffphoto = '<img src="' . $file_url . '" alt="' . $staffname . '">';
+                        } else {
+                            $staffphoto = $mm_wa_photo;
+                            $staffphoto = '<img src="' . $staffphoto . '" alt="' . $staffname . '">';
+                        }
+                        // get wa staff job
+                        $mm_wa_job = $wa['mm_wa_job'];
+
+                        if ($mm_wa_job == 'call') {
+                            $callnumb = $wa['mm_phone_numn'];
+                            $callnumb = preg_replace('/[^0-9]/', '', $callnumb);
+                            $callnumb = preg_replace('/^0/', '+62', $callnumb);
+                            $fmwabtns = '<div class="fmwabtns"><div class="fmcallbg" data-call="' . $callnumb . '" >Call</div></div>';
+                        } elseif ($mm_wa_job == 'chat') {
+                            // chat only
+                            $chatnumb = $wa['mm_wa_numb'];
+                            $chatnumb = preg_replace('/[^0-9]/', '', $chatnumb);
+                            $chatnumb = preg_replace('/^0/', '62', $chatnumb);
+                            $fmwabtns = '<div class="fmwabtns"><div class="fmwabg" data-call="' . $chatnumb . '" >Chat</div></div>';
+                        } elseif ($mm_wa_job == 'call_chat') {
+                            // chat and wa
+                            // call numb
+                            $callnumb = $wa['mm_phone_numn'];
+                            $callnumb = preg_replace('/[^0-9]/', '', $callnumb);
+                            $callnumb = preg_replace('/^0/', '+62', $callnumb);
+                            // wa numb
+                            $chatnumb = $wa['mm_wa_numb'];
+                            $chatnumb = preg_replace('/[^0-9]/', '', $chatnumb);
+                            $chatnumb = preg_replace('/^0/', '62', $chatnumb);
+                            $fmwabtns = '<div class="fmwabtns"><div class="fmcallbg" data-call="' . $chatnumb . '" >Call</div><div class="fmwabg" data-wa="' . $chatnumb . '" >Chat</div></div>';
+                        }
+                    ?>
+                        <!-- staff item -->
+                        <div class="fmwaitem <?php echo $staffstatus; ?>">
+                            <!-- photo or staff left -->
+                            <div class="fmwaitemleft">
+                                <?php echo $staffphoto; ?>
+                            </div>
+                            <!-- staff right -->
+                            <div class="fmwaitemright">
+                                <!-- staff data -->
+                                <div class="fmwastaff">
+                                    <span class="fmwastaffname"><?php echo $staffname; ?></span>
+                                    <span class="fmwastaffjob"><?php echo $staffjob; ?></span>
+                                </div>
+                                <!-- staff button -->
+                                <div class="fmwabtn">
+                                    <?php echo $fmwabtns; ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php
+}
+add_action('wp_body_open', 'fmw_show_whatsapp', 101);
