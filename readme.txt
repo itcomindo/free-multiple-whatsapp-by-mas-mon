@@ -24,10 +24,12 @@ Features:
 - Custom text header
 - Custom enable or disable staff
 - Custom bisa upload photo untuk staff atau tidak
-- Nama staff
-- Job staff
+- Custom Nama staff
+- Custom Job staff
 - Pilihan tombol CTA (chat only, call only & chat and call)
-
+- Bisa menggunakan nomor yang berbeda untuk Whatsapp dan Call
+- Schedule by day (staff bisa ditampilkan berdasarkan hari-hari tertentu)
+- Schedule by hour (staff bisa ditampilkan berdasarkan jam-jam tertentu)
 
 
 
