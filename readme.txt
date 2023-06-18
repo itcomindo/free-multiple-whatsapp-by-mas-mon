@@ -5,3 +5,7 @@ Perhatian!
 2. Download plugin Carbon Fields (gratis) -> install -> aktifkan plugin Carbon Fields
 3. Download plugin ini -> install -> aktifkan
 4. Lakukan konfigurasi sedikit
+
+
+Note:
+plugin ini menggunakan Carbon Fields versi v3.6.0 download disini: https://carbonfields.net/release-archive/
