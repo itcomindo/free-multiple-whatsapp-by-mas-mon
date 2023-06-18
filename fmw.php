@@ -12,19 +12,30 @@ defined('ABSPATH') || exit;
  *=========================
  */
 
+add_action('after_setup_theme', 'set_jakarta_timezone');
+
+function set_jakarta_timezone()
+{
+    date_default_timezone_set('Asia/Jakarta');
+}
 
 
 // include plugin-options.php
 require_once plugin_dir_path(__FILE__) . 'fmw-plugin-options.php';
 require_once plugin_dir_path(__FILE__) . 'fmw-show-whatsapp.php';
 
-function load_scripts()
+function fmw_load_scripts()
 {
     wp_enqueue_style('fmw-style', plugin_dir_url(__FILE__) . 'fmw.css');
     wp_enqueue_script('fmw-script', plugin_dir_url(__FILE__) . 'fmw.js', array('jquery'), '1.0', true);
 }
-add_action('wp_enqueue_scripts', 'load_scripts');
+add_action('wp_enqueue_scripts', 'fmw_load_scripts');
 
+function fmw_load_admin_scripts()
+{
+    wp_enqueue_style('fmw-admin-style', plugin_dir_url(__FILE__) . 'fmw-admin.css');
+}
+add_action('admin_enqueue_scripts', 'fmw_load_admin_scripts');
 
 
 

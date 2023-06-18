@@ -67,46 +67,24 @@ function fmw_show_whatsapp()
                             $chatnumb = preg_replace('/^0/', '62', $chatnumb);
                             $fmwabtns = '<div class="fmwabtns"><div class="fmcallbg" data-call="' . $chatnumb . '" >Call</div><div class="fmwabg" data-wa="' . $chatnumb . '" >Chat</div></div>';
                         }
-                        //=========================Scheduling by day Logic=========================
+                        //=========================Scheduling Logic=========================
                         $scheduling_status = $wa['mm_enable_disable_schedule'];
                         if ($scheduling_status == true) {
 
                             $mm_schedule_wa_by_day = $wa['mm_schedule_wa_by_day'];
                             if ($mm_schedule_wa_by_day == true) {
                                 $days = $wa['mm_schedule_wa_by_day']; // this is array
-                                $days = implode(',', $days);
-                                $current_day = strtolower(date('l'));
-                                // if $days contain all then create variable $days with all day
-                                if (strpos($days, 'all') !== false) {
-                                    $days = 'monday,tuesday,wednesday,thursday,friday,saturday,sunday';
-                                } else {
-                                    $current_day = $current_day;
-                                    $days = $days;
-                                }
+                                $days = implode(' ', $days);
+                            } else {
+                                // wait
                             }
+                        } else {
+                            $days = 'all';
                         }
-
-
-                        //=========================Scheduling by hour logic=========================
-                        // $mm_enable_disable_by_hour = $wa['mm_enable_disable_by_hour'];
-
-                        // if ($mm_enable_disable_by_hour == true) {
-                        //     $hourschedules = $wa['mm_schedule_wa_hour'];
-                        //     $currenttime = date('H.i');
-                        //     foreach ($hourschedules as $hs) {
-                        //         $starttoend .= $hs['mm_wa_hour_start'] . '-' . $hs['mm_wa_hour_end'] . ', ';
-                        //     }
-                        //     // $starttoend = rtrim($starttoend, ', ');
-                        // } else {
-                        //     // wait
-                        //     $currenttime = '';
-                        //     $starttoend = '';
-                        // }
-
 
                     ?>
                         <!-- staff item -->
-                        <div class="fmwaitem <?php echo $staffstatus; ?>" data-current-day="<?php echo $current_day; ?>" data-schedule-days="<?php echo $days; ?>" data-current-time="<?php echo $currenttime; ?>" data-start-time="<?php echo $starttoend; ?>">
+                        <div class="fmwaitem <?php echo $staffstatus; ?> <?php echo $days; ?>">
                             <!-- photo or staff left -->
                             <div class="fmwaitemleft">
                                 <?php echo $staffphoto; ?>

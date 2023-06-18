@@ -44,7 +44,7 @@ div#fmwapr.inactive {
 div#fmwapr div {
   box-sizing: border-box;
 }
-.fmwatoggle {
+div.fmwatoggle {
   position: absolute;
   right: 8px;
   cursor: pointer;
@@ -79,16 +79,16 @@ div#fmwaclose.active {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
-#fmwawr {
+div#fmwawr {
   width: 100%;
 }
 
-#fmwatop,
-#fmwabot {
+div#fmwatop,
+div#fmwabot {
   width: 100%;
 }
 
-#fmwatop {
+div#fmwatop {
   height: 58px;
   display: grid;
   grid-template-columns: 100px 1fr;
@@ -103,16 +103,16 @@ div#fmwaclose.active {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-#fmwabot {
+div#fmwabot {
   padding: 8px;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.fmwabotinner {
+div.fmwabotinner {
   display: grid;
   gap: 16px;
 }
 
-.fmwaitem {
+div.fmwaitem {
   width: 100%;
   display: grid;
   gap: 4px;
@@ -127,10 +127,10 @@ div#fmwaclose.active {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
-.fmwaitem.disabled {
+div.fmwaitem.disabled {
   display: none;
 }
-.fmwaitemleft {
+div.fmwaitemleft {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,36 +144,33 @@ div#fmwaclose.active {
   -o-border-radius: 50%;
   overflow: hidden;
 }
-.fmwaitemright {
+div.fmwaitemright {
   display: grid;
   grid-template-columns: 100px 1fr;
   align-items: center;
 }
-.fmwastaff {
+div.fmwastaff {
   display: flex;
   flex-direction: column;
   line-height: 1.3;
 }
-.fmwastaffname {
+div.fmwastaffname {
   font-size: 14px;
   font-weight: 700;
 }
-span.fmwastaffjob {
+div.fmwastaffjob {
   font-size: 11px;
 }
 
-.fmwabtn {
-  width: 100%;
-}
-.fmwabtns {
+div.fmwabtns {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 8px;
 }
-.fmcallbg,
-.fmwabg {
+div.fmcallbg,
+div.fmwabg {
   display: flex;
   align-items: center;
   font-size: 13px;
@@ -189,11 +186,11 @@ span.fmwastaffjob {
   cursor: pointer;
 }
 
-.fmcallbg {
+div.fmcallbg {
   background-color: darkred;
   color: wheat;
 }
-.fmwabg {
+div.fmwabg {
   background-color: darkgreen;
   color: wheat;
 }

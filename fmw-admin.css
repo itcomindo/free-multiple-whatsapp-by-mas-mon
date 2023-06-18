@@ -1,0 +1,11 @@
+.cbseparator {
+  background-color: #333;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+.cbseparator h3 {
+  color: white;
+  font-size: 15px !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+}

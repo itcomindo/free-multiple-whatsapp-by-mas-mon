@@ -50,6 +50,30 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
 
 
+        /*=========================days=========================*/
+        // get day today in Indonesia
+        var fmwaitem = jQuery('.fmwaitem');
+        // note: attribute data-schedule-days is array seperated by comma.
+        // get attribute data-current-day and data-schedule-days from each fmwaitem.
+        fmwaitem.each(function () {
+            var currentDay = jQuery(this).attr('data-current-day');
+            var scheduleDays = jQuery(this).attr('data-schedule-days');
+            var scheduleDaysArray = scheduleDays.split(',');
+            // check if currentDay is in scheduleDaysArray
+            if (scheduleDaysArray.includes(currentDay)) {
+                // if true, add class active to this
+                jQuery(this).addClass('active');
+            } else {
+                // if false, add class inactive to this
+                // jQuery(this).addClass('inactive');
+                jQuery(this).remove();
+            }
+        });
+
+
+
+
+
 
 
 
