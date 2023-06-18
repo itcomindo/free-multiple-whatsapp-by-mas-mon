@@ -9,3 +9,5 @@ Perhatian!
 
 Note:
 plugin ini menggunakan Carbon Fields versi v3.6.0 download disini: https://carbonfields.net/release-archive/
+Support visit: https://budiharyono.com/
+Service visit: https://budiharyono.com/jasa-pembuatan-web/
