@@ -49,14 +49,50 @@ function fmw_register_fields()
 
             // Toggle Open Chat Text
             Field::make('text', 'mm_wa_toggle_open_chat_text', 'Toggle Open Chat Text')
-                ->set_width(33)
+                ->set_width(50)
                 ->set_default_value('Chat/Call'),
 
             // background color for close chat button
             Field::make('color', 'mm_wa_toggle_close_background_color', 'Toggle Close Chat Background Color')
-                ->set_width(33)
+                ->set_width(50)
                 ->set_default_value('#8B0207')
                 ->set_help_text('Change the background color of the toggle close chat button'),
+
+            //text for chat button
+            Field::make('text', 'mm_wa_chat_btn_text', 'Text For Chat Button')
+                ->set_width(33)
+                ->set_default_value('Chat')
+                ->set_help_text('Change the text of the chat button, e.g: Chat, Chat Now, etc and psst you can use emoji here or font awesome icon'),
+
+            //background color for chat button
+            Field::make('color', 'mm_wa_chat_btn_background_color', 'Chat Button Background Color')
+                ->set_width(33)
+                ->set_default_value('#016400')
+                ->set_help_text('Change the background color of the chat button'),
+
+            //text color for chat button
+            Field::make('color', 'mm_wa_chat_btn_text_color', 'Chat Button Text Color')
+                ->set_width(33)
+                ->set_default_value('#ffffff')
+                ->set_help_text('Change the text color of the chat button'),
+
+            //text for call button
+            Field::make('text', 'mm_wa_call_btn_text', 'Text For Call Button')
+                ->set_width(33)
+                ->set_default_value('Call')
+                ->set_help_text('Change the text of the call button, e.g: Call, Call Now, etc and psst you can use emoji here or font awesome icon'),
+
+            //background color for call button
+            Field::make('color', 'mm_wa_call_btn_background_color', 'Call Button Background Color')
+                ->set_width(33)
+                ->set_default_value('#016400')
+                ->set_help_text('Change the background color of the call button'),
+
+            //text color for call button
+            Field::make('color', 'mm_wa_call_btn_text_color', 'Call Button Text Color')
+                ->set_width(33)
+                ->set_default_value('#ffffff')
+                ->set_help_text('Change the text color of the call button'),
 
 
             //=========================Whatsapp staff input=========================

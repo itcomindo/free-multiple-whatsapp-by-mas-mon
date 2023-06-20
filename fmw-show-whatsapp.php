@@ -6,6 +6,18 @@ function fmw_show_whatsapp()
     $mm_wa_top_section_text = carbon_get_theme_option('mm_wa_top_section_text');
     $watiosectextcolor = carbon_get_theme_option('mm_wa_top_section_text_color');
     $watiosectbgcolor = carbon_get_theme_option('mm_wa_top_section_background_color');
+
+    // for chat
+    $chatbuttonbgcolor = carbon_get_theme_option('mm_wa_chat_btn_background_color');
+    $textchatbutton = carbon_get_theme_option('mm_wa_chat_btn_text');
+    $textchatbuttoncolor = carbon_get_theme_option('mm_wa_chat_btn_text_color');
+
+    //for call
+    $callbuttonbgcolor = carbon_get_theme_option('mm_wa_call_btn_background_color');
+    $textcallbutton = carbon_get_theme_option('mm_wa_call_btn_text');
+    $textcallbuttoncolor = carbon_get_theme_option('mm_wa_call_btn_text_color');
+
+
     $mm_logo_company = carbon_get_theme_option('mm_logo_company');
     if (!empty($mm_logo_company)) {
         $top = '<div id="fmwatop" style="background-color:' . $watiosectbgcolor . '" class="withlogo"><div id="fmwalogo"><img src="' . $mm_logo_company . '" alt="logo"></div><div id="fmwatitle" style="color:' . $watiosectextcolor . '">' . $mm_wa_top_section_text . '</div></div>';
@@ -51,17 +63,18 @@ function fmw_show_whatsapp()
                         // get wa staff job
                         $mm_wa_job = $wa['mm_wa_job'];
 
+                        //call only
                         if ($mm_wa_job == 'call') {
                             $callnumb = $wa['mm_phone_numn'];
                             $callnumb = preg_replace('/[^0-9]/', '', $callnumb);
                             $callnumb = preg_replace('/^0/', '+62', $callnumb);
-                            $fmwabtns = '<div class="fmwabtns"><div class="fmcallbg" data-call="' . $callnumb . '" >Call</div></div>';
+                            $fmwabtns = '<div class="fmwabtns"><div class="fmcallbg" data-call="' . $callnumb . '"  style="background-color:' . $callbuttonbgcolor . '; color:' . $textcallbuttoncolor . '">' . $textcallbutton . '</div></div>';
                         } elseif ($mm_wa_job == 'chat') {
                             // chat only
                             $chatnumb = $wa['mm_wa_numb'];
                             $chatnumb = preg_replace('/[^0-9]/', '', $chatnumb);
                             $chatnumb = preg_replace('/^0/', '62', $chatnumb);
-                            $fmwabtns = '<div class="fmwabtns"><div class="fmwabg" data-call="' . $chatnumb . '" >Chat</div></div>';
+                            $fmwabtns = '<div class="fmwabtns"><div class="fmwabg" data-call="' . $chatnumb . '"  style="background-color:' . $chatbuttonbgcolor . '; color:' . $textcallbuttoncolor . '">' . $textchatbutton . '</div></div>';
                         } elseif ($mm_wa_job == 'call_chat') {
                             // chat and wa
                             // call numb
@@ -72,7 +85,7 @@ function fmw_show_whatsapp()
                             $chatnumb = $wa['mm_wa_numb'];
                             $chatnumb = preg_replace('/[^0-9]/', '', $chatnumb);
                             $chatnumb = preg_replace('/^0/', '62', $chatnumb);
-                            $fmwabtns = '<div class="fmwabtns"><div class="fmcallbg" data-call="' . $chatnumb . '" >Call</div><div class="fmwabg" data-wa="' . $chatnumb . '" >Chat</div></div>';
+                            $fmwabtns = '<div class="fmwabtns"><div class="fmcallbg" data-call="' . $chatnumb . '"  style="background-color:' . $callbuttonbgcolor . '; color:' . $textcallbuttoncolor . '">' . $textcallbutton . '</div><div class="fmwabg" data-wa="' . $chatnumb . '" style="background-color:' . $chatbuttonbgcolor . '; color:' . $textcallbuttoncolor . '">' . $textchatbutton . '</div></div>';
                         }
                         //=========================Scheduling by day Logic=========================
                         $scheduling_status = $wa['mm_enable_disable_schedule'];

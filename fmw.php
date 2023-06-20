@@ -26,6 +26,8 @@ require_once plugin_dir_path(__FILE__) . 'fmw-show-whatsapp.php';
 
 function fmw_load_scripts()
 {
+    // load fontawesome from cdn
+    wp_enqueue_style('fmw-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
     wp_enqueue_style('fmw-style', plugin_dir_url(__FILE__) . 'fmw.css');
     wp_enqueue_script('fmw-script', plugin_dir_url(__FILE__) . 'fmw.js', array('jquery'), '1.0', true);
 }

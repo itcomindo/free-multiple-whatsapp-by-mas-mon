@@ -44,6 +44,13 @@ div#fmwapr.inactive {
 div#fmwapr div {
   box-sizing: border-box;
 }
+div.fmwabtns div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 4px;
+  font-size: 13px;
+}
 div.fmwatoggle {
   position: absolute;
   right: 8px;
@@ -204,11 +211,7 @@ div.fmwabtns {
 }
 div.fmcallbg,
 div.fmwabg {
-  display: flex;
-  align-items: center;
-  font-size: 13px;
   line-height: 1;
-  justify-content: center;
   padding: 8px 0;
   border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -217,13 +220,4 @@ div.fmwabg {
   -o-border-radius: 3px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
-}
-
-div.fmcallbg {
-  background-color: darkred;
-  color: wheat;
-}
-div.fmwabg {
-  background-color: darkgreen;
-  color: wheat;
 }
