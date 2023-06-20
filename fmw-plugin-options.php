@@ -15,8 +15,12 @@ function fmw_register_fields()
                 ->set_default_value(false),
 
             //=========================upload custom logo (optional for user)=========================
+            Field::make('separator', 'stylingsep', 'Top Section')
+                ->set_classes('cbseparator'),
+
+
+            // logo company
             Field::make('image', 'mm_logo_company', 'Logo Perusahaan')
-                ->set_width(50)
                 ->set_help_text('Optional you can Upload your company logo here or leave it blank if you dont want to use logo. logo will show at the top of the whatsapp chat box. Ukuran logo yang disarankan 50px x 50px')
                 ->set_value_type('url')
                 ->set_conditional_logic([
@@ -26,9 +30,39 @@ function fmw_register_fields()
                     ],
                 ]),
 
+            Field::make('text', 'mm_wa_top_section_text', 'Top Section Text')
+                ->set_width(33)
+                ->set_default_value('Hubungi Kami')
+                ->set_help_text('Change the text of the top section e,g: Hubungi Kami, Chat Kami, Contact Us, etc'),
+
+            // background color for top section
+            Field::make('color', 'mm_wa_top_section_background_color', 'Background Color')
+                ->set_width(33)
+                ->set_default_value('#016400')
+                ->set_help_text('Change the background color of the top section'),
+
+            // text color for top section
+            Field::make('color', 'mm_wa_top_section_text_color', 'Text Color')
+                ->set_width(33)
+                ->set_default_value('#ffffff')
+                ->set_help_text('Change the text color of the top section'),
+
+            // Toggle Open Chat Text
+            Field::make('text', 'mm_wa_toggle_open_chat_text', 'Toggle Open Chat Text')
+                ->set_width(33)
+                ->set_default_value('Chat/Call'),
+
+            // background color for close chat button
+            Field::make('color', 'mm_wa_toggle_close_background_color', 'Toggle Close Chat Background Color')
+                ->set_width(33)
+                ->set_default_value('#8B0207')
+                ->set_help_text('Change the background color of the toggle close chat button'),
+
 
             //=========================Whatsapp staff input=========================
 
+            Field::make('separator', 'whatsappitemsep', 'Staff Whatsapp')
+                ->set_classes('cbseparator'),
             Field::make('complex', 'mm_multiple_whatsapp', 'Multiple Whatsapp')
                 ->set_conditional_logic([
                     [

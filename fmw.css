@@ -88,19 +88,52 @@ div#fmwabot {
   width: 100%;
 }
 
-div#fmwatop {
+div#fmwatop.withlogo {
   height: 58px;
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 48px 1fr;
   align-items: center;
   border-radius: 10px 10px 0 0;
   -webkit-border-radius: 10px 10px 0 0;
   -moz-border-radius: 10px 10px 0 0;
   -ms-border-radius: 10px 10px 0 0;
   -o-border-radius: 10px 10px 0 0;
-  padding: 8px 1rem;
-  background-color: darkgreen;
+  padding: 2px 1rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+div#fmwatop.nologo {
+  height: 58px;
+  display: grid;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  -ms-border-radius: 10px 10px 0 0;
+  -o-border-radius: 10px 10px 0 0;
+  padding: 2px 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+div#fmwatop.withlogo div#fmwalogo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div#fmwatop.withlogo div#fmwalogo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 div#fmwabot {

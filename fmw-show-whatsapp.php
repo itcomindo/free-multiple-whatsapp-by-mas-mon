@@ -3,16 +3,23 @@ defined('ABSPATH') || exit;
 
 function fmw_show_whatsapp()
 {
-
+    $mm_wa_top_section_text = carbon_get_theme_option('mm_wa_top_section_text');
+    $watiosectextcolor = carbon_get_theme_option('mm_wa_top_section_text_color');
+    $watiosectbgcolor = carbon_get_theme_option('mm_wa_top_section_background_color');
+    $mm_logo_company = carbon_get_theme_option('mm_logo_company');
+    if (!empty($mm_logo_company)) {
+        $top = '<div id="fmwatop" style="background-color:' . $watiosectbgcolor . '" class="withlogo"><div id="fmwalogo"><img src="' . $mm_logo_company . '" alt="logo"></div><div id="fmwatitle" style="color:' . $watiosectextcolor . '">' . $mm_wa_top_section_text . '</div></div>';
+    } else {
+        $top = '<div id="fmwatop" style="background-color:' . $watiosectbgcolor . '" class="nologo"><div id="fmwatitle" style="color:' . $watiosectextcolor . '">' . $mm_wa_top_section_text . '</div></div>';
+    }
+    $mm_wa_toggle_close_background_color = carbon_get_theme_option('mm_wa_toggle_close_background_color');
 ?>
     <div id="fmwapr" class="active">
-        <div id="fmwaclose" class="active fmwatoggle">X</div>
+        <div id="fmwaclose" class="active fmwatoggle" style="background-color: <?php echo $mm_wa_toggle_close_background_color; ?>;">X</div>
         <div id="fmwaopen" class="inactive fmwatoggle">Chat/Call</div>
         <div id="fmwawr">
-            <div id="fmwatop">
-                <div id="fmwalogo">Logo</div>
-                <div id="fmwatitle">Hubungi Kami</div>
-            </div>
+            <!-- top section here -->
+            <?php echo $top; ?>
             <div id="fmwabot">
                 <div class="fmwabotinner">
                     <?php
@@ -102,7 +109,6 @@ function fmw_show_whatsapp()
                         //     $currenttime = '';
                         //     $starttoend = '';
                         // }
-
 
                     ?>
                         <!-- staff item -->
