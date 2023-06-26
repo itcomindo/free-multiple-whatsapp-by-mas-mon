@@ -37,4 +37,5 @@ Note:
 plugin ini menggunakan Carbon Fields versi v3.6.0 download disini: https://carbonfields.net/release-archive/
 Support visit: https://budiharyono.com/
 Service visit: https://budiharyono.com/jasa-pembuatan-web/
+https://budiharyono.com/repo/plugins/28/wp-multiple-whatsapp-plugin-by-masmo/
 Whatsapp: https://api.whatsapp.com/send?phone=6281398912341&text=from%20GitHub
