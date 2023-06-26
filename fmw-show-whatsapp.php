@@ -152,4 +152,4 @@ function fmw_show_whatsapp()
     </div>
 <?php
 }
-add_action('wp_body_open', 'fmw_show_whatsapp', 101);
+add_action('wp_footer', 'fmw_show_whatsapp', 101);
